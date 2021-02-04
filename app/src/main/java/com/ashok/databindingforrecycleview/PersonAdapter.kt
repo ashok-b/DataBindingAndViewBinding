@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView.*
 import com.ashok.databindingforrecycleview.databinding.RowItemBinding
 import com.bumptech.glide.Glide
 
-class PersonAdapter : Adapter<PersonAdapter.PersonHolder>() {
+class PersonAdapter(private val mListener: PersonItemClickListener) : Adapter<PersonAdapter.PersonHolder>() {
     var dataSet = mutableListOf<PersonInfo>()
 
     fun setData(inputDataSet : ArrayList<PersonInfo>){
@@ -30,15 +30,23 @@ class PersonAdapter : Adapter<PersonAdapter.PersonHolder>() {
     override fun onBindViewHolder(holder: PersonHolder, position: Int) {
         val data  =  dataSet[position]
         holder.bind(data)
+
+        holder.rowItemBinding.personItemClick = mListener
+        //This is to force bindings to execute right away
+        holder.rowItemBinding.executePendingBindings()
     }
 
 
-    class PersonHolder(private val rowItemBinding: RowItemBinding) : ViewHolder(rowItemBinding.root) {
+    class PersonHolder(val rowItemBinding: RowItemBinding) : ViewHolder(rowItemBinding.root) {
 
         fun bind(personInfo: PersonInfo) {
             rowItemBinding.person= personInfo
         }
         
+    }
+
+    interface PersonItemClickListener {
+        fun onPersonItemClicked(personInfo: PersonInfo)
     }
 
 }

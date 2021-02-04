@@ -7,10 +7,16 @@
         <variable
             name="person"
             type="com.ashok.databindingforrecycleview.PersonInfo" />
+
+        <variable
+            name="personItemClick"
+            type="com.ashok.databindingforrecycleview.PersonAdapter.PersonItemClickListener"/>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:onClick="@{() -> personItemClick.onPersonItemClicked(person)}"
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView

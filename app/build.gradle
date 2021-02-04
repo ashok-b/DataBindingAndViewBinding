@@ -7,11 +7,9 @@ apply plugin: 'kotlin-kapt'
 android {
 
     buildFeatures {
-
-        dataBinding = true
-
+        dataBinding true
         // for view binding:
-        viewBinding = true
+        viewBinding true
     }
 
     compileSdkVersion 29
