@@ -12,4 +12,4 @@ This project presents how to use both DataBinding & ViewBinding with a recyclerv
     
  ## Output
  
- <img src="https://github.com/ashok-b/DataBindingAndViewBinding/blob/main/media/data_binding_rcv.png" title="DataBinding With Recyeler View" alt="DataBinding With Recyeler View" width="400" height="750">
+ <img src="https://github.com/ashok-b/DataBindingAndViewBinding/blob/main/media/data_binding_rcv.png" title="DataBinding With Recyeler View" alt="DataBinding With Recyeler View" width="450">
